@@ -1,7 +1,21 @@
-
 Taken from  https://github.com/sontek/dotfiles.git
 
-http://code.google.com/p/conque/
+# Basic Setup
+## Install important stuff
+
+    apt-get install openssh-server github
+
+## Then check this stuff out
+    
+    git clone https://github.com/timconradinc/dotfiles.git
+
+## Install packages and set up repos
+
+    ./package-setup.sh
+
+## Next, install stuff
+
+    ./install.sh
 
 ## Files
 .vim
@@ -15,8 +29,8 @@ http://code.google.com/p/conque/
 .gimp
     my tweaks/additions to gimp (fonts, brushes, etc)
 
-## Instructions
-### Creating source files
+# Instructions
+## Creating source files
 Any file which matches the shell glob `_*` will be linked into `$HOME` as a symlink with the first `_`  replaced with a `.`
 
 For example:
@@ -26,13 +40,3 @@ For example:
 becomes
 
     ${HOME}/.bashrc
-
-### Installing source files
-It's as simple as running:
-
-    ./install.sh
-
-From this top-level directory.
-
-## Requirements
-* bash
