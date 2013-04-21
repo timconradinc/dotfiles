@@ -227,9 +227,9 @@ export GIT_EDITOR="$vim"
 export PS1="$PS1\$(parse_git_branch)\$(parse_svn_branch) "
 
 # explitly set this jdk
-JAVA_HOME=/home/conrat01/jdk1.6.0_32/; export JAVA_HOME
+# JAVA_HOME=/home/conrat01/jdk1.6.0_32/; export JAVA_HOME
 # add this to the path so it comes first
-PATH=$JAVA_HOME/bin:$PATH; export PATH
+# PATH=$JAVA_HOME/bin:$PATH; export PATH
 # configure the play framework
 PLAY_PATH=/home/${USER}/frameworks/play-2.0.1; export PLAY_PATH
 # adjust the PATH for all this fun shiz
