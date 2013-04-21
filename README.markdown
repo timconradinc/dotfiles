@@ -3,7 +3,7 @@ Taken from  https://github.com/sontek/dotfiles.git
 # Basic Setup
 ## Install important stuff
 
-    apt-get install openssh-server github
+    sudo apt-get install openssh-server git
 
 ## Then check this stuff out
     
@@ -13,7 +13,15 @@ Taken from  https://github.com/sontek/dotfiles.git
 
     ./package-setup.sh
 
-## Next, install stuff
+### Notes on Setup
+
+This is mostly being set up around using rvm/virtualenv for
+development work and not relying very much on system packages.
+
+So tools like ipython aren't installed, since I put them in
+my virtualenv when I work on stuff.
+
+## Then set up $HOME
 
     ./install.sh
 

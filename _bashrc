@@ -240,3 +240,5 @@ PATH=$SCALA_HOME/bin:$AKKA_HOME/bin:$JAVA_HOME/bin:$PLAY_PATH:$PATH; export PATH
 TERM=xterm-256color; export TERM
 
 export GEM_HOME="/home/conrat01/gems/"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
