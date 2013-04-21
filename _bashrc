@@ -236,3 +236,7 @@ PLAY_PATH=/home/${USER}/frameworks/play-2.0.1; export PLAY_PATH
 AKKA_HOME=/home/${USER}/frameworks/akka-2.0.2; export AKKA_HOME
 SCALA_HOME=/home/${USER}/frameworks/scala-2.9.2; export SCALA_HOME
 PATH=$SCALA_HOME/bin:$AKKA_HOME/bin:$JAVA_HOME/bin:$PLAY_PATH:$PATH; export PATH
+
+TERM=xterm-256color; export TERM
+
+export GEM_HOME="/home/conrat01/gems/"
