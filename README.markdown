@@ -7,11 +7,11 @@ Taken from  https://github.com/sontek/dotfiles.git
 
 ## Then check this stuff out
     
-    git clone https://github.com/timconradinc/dotfiles.git
+    cd ~/ && git clone https://github.com/timconradinc/dotfiles.git
 
 ## Install packages and set up repos
 
-    ./package-setup.sh
+    cd dotfiles && ./package-setup.sh
 
 ### Notes on Setup
 
