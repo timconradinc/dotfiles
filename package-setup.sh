@@ -1,6 +1,7 @@
 #!/bin/bash
 
 mkdir -p ${HOME}/{bin,lib,workspace,tmp}
+# https://wiki.postgresql.org/wiki/Apt
 sudo echo "deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main" >> /etc/apt/sources.list.d/pgsql.list
 sudo wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | sudo apt-key add -
 
