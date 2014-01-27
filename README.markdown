@@ -3,7 +3,7 @@ Taken from  https://github.com/sontek/dotfiles.git
 # Basic Setup
 ## Install important stuff
 
-    sudo apt-get install openssh-server git software-properties-common
+    sudo apt-get install openssh-server git software-properties-common python-software-properties
 
 ## Then check this stuff out
     
