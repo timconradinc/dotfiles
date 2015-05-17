@@ -44,8 +44,14 @@ if [ $(cat ${choice} | grep "%%" | wc -l) -gt 0 ]; then
     # %%HOSTNAME%%
     # %%DOMAIN%%
     # %%INSTANCEID%%
-    finalfile="cloud-${hostname}.cfg"
+    finalfile="${hostname}-cloud.cfg"
+    metadata="${hostname}.meta-data"
+    userdata="${hostname}.user-data"
     cat ${choice} | sed -e "s/%%HOSTNAME%%/${hostname}/" | sed -e "s/%%DOMAIN%%/${domain}/" | sed -e "s/%%INSTANCEID%%/${instance_id}/" > ${finalfile}
+    echo "instance-id: ${instance_id}" > ${metadata}
+    echo "local-hostname: ${hostname}" >> ${metadata}
+    echo "#cloud-config" > ${userdata}
+    echo "final_message: \"System is operational: ${hostname}\"" >> ${userdata}
 else
     echo "Appears nothing to do, simply making the cloud.cfg file"
     cat ${choice} > ${finalfile}
@@ -53,3 +59,8 @@ fi
 
 echo "Review ${finalfile} and if it appears to be okay, run the following:"
 echo "if [ -f /etc/cloud.cfg ]; then sudo cp /etc/cloud.cfg /etc/cloud.cfg.bak; fi && sudo cp ${finalfile} /etc/cloud/cloud.cfg"
+nocloudpath="/var/lib/cloud/seed/nocloud/"
+echo "sudo mkdir -p ${nocloudpath}"
+echo "sudo cp ${metadata} ${nocloudpath}/meta-data"
+echo "sudo cp ${userdata} ${nocloudpath}/user-data"
+echo "touch ${nocloudpath}/vendor-data"
