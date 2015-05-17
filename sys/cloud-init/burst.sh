@@ -9,6 +9,7 @@ echo "Currently there are the following:"
 
 index=1
 template=0
+finalfile="cloud-generic.cfg"
 
 # get list of templates, turn into array so that they're always the same
 templates=(`ls *.tpl`)
@@ -43,8 +44,12 @@ if [ $(cat ${choice} | grep "%%" | wc -l) -gt 0 ]; then
     # %%HOSTNAME%%
     # %%DOMAIN%%
     # %%INSTANCEID%%
-    cat ${choice} | sed -e "s/%%HOSTNAME%%/${hostname}/" | sed -e "s/%%DOMAIN%%/${domain}/" | sed -e "s/%%INSTANCEID%%/${instance_id}/" > cloud-${hostname}.cfg
+    finalfile="cloud-${hostname}.cfg"
+    cat ${choice} | sed -e "s/%%HOSTNAME%%/${hostname}/" | sed -e "s/%%DOMAIN%%/${domain}/" | sed -e "s/%%INSTANCEID%%/${instance_id}/" > ${finalfile}
 else
     echo "Appears nothing to do, simply making the cloud.cfg file"
-    cat ${choice} > cloud.cfg
+    cat ${choice} > ${finalfile}
 fi
+
+echo "Review ${finalfile} and if it appears to be okay, run the following:"
+echo "sudo if [ -f /etc/cloud.cfg ]; then cp /etc/cloud.cfg /etc/cloud.cfg.bak; fi && cp ${finalfile} /etc/cloud/cloud.cfg"
