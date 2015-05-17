@@ -52,4 +52,4 @@ else
 fi
 
 echo "Review ${finalfile} and if it appears to be okay, run the following:"
-echo "sudo if [ -f /etc/cloud.cfg ]; then cp /etc/cloud.cfg /etc/cloud.cfg.bak; fi && cp ${finalfile} /etc/cloud/cloud.cfg"
+echo "if [ -f /etc/cloud.cfg ]; then sudo cp /etc/cloud.cfg /etc/cloud.cfg.bak; fi && sudo cp ${finalfile} /etc/cloud/cloud.cfg"
