@@ -38,23 +38,6 @@ package_reboot_if_required: true
 #      max_wait: 10 # (defaults to 120 seconds)
 
 datasource:
-
-  # hotwire Ec2 so that it doesn't take so long since it seems to be baked in.
-  # for some reason, this always fires.
-  Ec2:
-    # timeout: the timeout value for a request at metadata service
-    timeout : 1
-    # The length in seconds to wait before giving up on the metadata
-    # service.  The actual total wait could be up to 
-    #   len(resolvable_metadata_urls)*timeout
-    max_wait : 1
-
-    #metadata_url: a list of URLs to check for metadata services
-    metadata_urls:
-     - http://127.0.0.1:80
-    metadata_url:
-     - http://127.0.0.1:80
-
   # this is for vmware/hardware/etc
   NoCloud:
     # default seedfrom is None
