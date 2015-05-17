@@ -70,7 +70,7 @@ datasource:
     # right here
     # user-data: |
        # This is the user-data verbatum
-    # meta-data:
+    meta-data:
        instance-id: %%INSTANCEID%%
        local-hostname: %%HOSTNAME%%.%%DOMAIN%%
 
