@@ -47,15 +47,15 @@ datasource:
     seedfrom: None
 
     # fs_label: the label on filesystems to be searched for NoCloud source
-    fs_label: cidata
+    fs_label: rootvol
 
     # these are optional, but allow you to basically provide a datasource
     # right here
     # user-data: |
        # This is the user-data verbatum
-    meta-data:
-       instance-id: %%INSTANCEID%%
-       local-hostname: %%HOSTNAME%%.%%DOMAIN%%
+    # meta-data:
+    #    instance-id: %%INSTANCEID%%
+    #    local-hostname: %%HOSTNAME%%.%%DOMAIN%%
 
 # The modules that run in the 'init' stage
 cloud_init_modules:
